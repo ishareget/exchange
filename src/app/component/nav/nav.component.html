@@ -1,0 +1,11 @@
+<div [@fadeInOut] class="nav center valign-wrapper" *ngIf="step == 1">
+  <span class="nav-title">iShare</span>
+</div>
+
+<div [@fadeInOut] class="nav valign-wrapper" *ngIf="step == 2">
+  <span class="nav-title2">iShare</span>
+  <div class="chip right">
+    <img [src]="student.picture " alt="Contact Person " *ngIf="img">
+    <img src="http://fakeimg.pl/200x200/?text=?" alt="Contact Person" *ngIf="img==='' || img===null">點數 {{student.point}} 點
+  </div>
+</div>

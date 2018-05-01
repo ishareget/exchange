@@ -1,0 +1,107 @@
+<div class="store">
+
+  <div [@fadeInOut] class="light-white" *ngIf="isLoading">
+
+    <app-nav></app-nav>
+    <div class="row col s12">
+      <div class="photo center-align">
+        <img src="https://waytomonte.com/img/slider/1/1/273/24e492fa6319ad2c97b53a2afc48a6f6_thumb.jpg" class="picture">
+      </div>
+      <div class="container">
+        <h4 class="title">{{store.name}}</h4>
+        <h6>地　址：{{store.storeaddr}}</h6>
+        <div class="col s12">
+          <span>統　編：{{store.storeein}}</span>
+        </div>
+        <div class="col s6">
+          <span>負責人：{{store.storeadmin}}</span>
+        </div>
+        <div class="col s6 right-align">
+          <span>電　話：{{store.tel}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="row col s12">
+      <ul class="collapsible popout" data-collapsible="accordion" materialize="collapsible">
+        <li *ngFor="let item of item">
+          <div class="collapsible-header">
+            <i class="material-icons">shopping_cart</i>
+            {{item.name}}
+            <span class="badge">{{item.point}} 點</span>
+          </div>
+          <div class="collapsible-body center-align">
+            <img [src]="item.picture" class="product-img">
+            <br>
+            <!-- <swal #dialogchange title="確定要兌換嗎？" type="question" [options]="{ showCancelButton: 'true' }" (confirm)="exchange(item)" (cancel)="null()"></swal> -->
+            <a class="waves-effect waves-light btn change" [swal]="{ title: '確定要兌換嗎？', type: 'warning', showCancelButton: true }"
+            (confirm)="exchange(item)">兌換</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+
+  </div>
+
+  <div class="load valign-wrapper" *ngIf="!isLoading">
+    <div class="text-center">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-yellow">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-green">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <span class="white-text load-content">登入中....</span>
+    </div>
+
+  </div>
+
+
+</div>
+
+<swal #dialogError title="點數不足，無法兌換" type="error"></swal>

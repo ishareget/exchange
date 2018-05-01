@@ -1,0 +1,112 @@
+<div class="result">
+  <app-nav></app-nav>
+  <div *ngIf="path == 1">
+    <div [@fadeInOut] class="row col 12" *ngIf="isLoading">
+      <h3 class="center">兌換成功</h3>
+    </div>
+    <div [@fadeInOut] class="light-white" *ngIf="isLoading">
+      <form class="login-content center-align z-depth-2">
+        <div class="row">
+          <img [src]="item.picture" class="picture">
+          <br>
+          <h5 class="center">{{item.name}}</h5>
+        </div>
+        <div class="row">
+          <h6 class="center">兌 換 人：{{student}}</h6>
+        </div>
+        <div class="row">
+          <h6 class="center">花費點數：{{item.point}}</h6>
+        </div>
+        <div class="row">
+          <h6 class="center">剩餘點數：{{point}}</h6>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- 改成SweetAlert <div *ngIf="path == 2">
+    <div [@fadeInOut] class="row col 12" *ngIf="isLoading">
+      <h3 class="center">點數不足</h3>
+    </div>
+    <div [@fadeInOut] class="light-white" *ngIf="isLoading">
+      <form class="login-content center-align z-depth-2">
+        <div class="row">
+          <img [src]="item.picture" class="picture">
+          <br>
+          <h5 class="center">{{item.name}}</h5>
+        </div>
+        <div class="row center">
+          <h6 class="center">兌 換 人：{{student}}</h6>
+        </div>
+        <div class="row center">
+          <h6 class="center">剩餘點數：{{point}}</h6>
+        </div>
+      </form>
+    </div>
+  </div> -->
+
+  <div *ngIf="path == 3">
+    <div [@fadeInOut] class="valign-wrapper" *ngIf="isLoading">
+      <h3 class="center">兌換失敗，請洽管理員</h3>
+    </div>
+  </div>
+
+  <div class="load valign-wrapper" *ngIf="!isLoading">
+    <div class="text-center">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-yellow">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-green">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <span class="white-text load-content">兌換中，請稍後....</span>
+    </div>
+
+  </div>
+
+
+</div>
+

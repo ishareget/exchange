@@ -1,0 +1,100 @@
+<div class="storelogin">
+  <div [@fadeInOut] class="light-blue valign-wrapper" *ngIf="show">
+    <span class="title center-align">iShare</span>
+  </div>
+  <div [@fadeInOut] class="Loginbtn valign-wrapper" *ngIf="show">
+    <div class="title center-align">
+      <a class="waves-effect waves-light btn" (click)="StartClick();">Start</a>
+    </div>
+  </div>
+
+
+  <app-nav *ngIf="show2"></app-nav>
+
+  <div [@fadeInOut] class="light-white valign-wrapper" *ngIf="show2">
+    <form class="login-content center-align z-depth-2">
+      <div class="row">
+        <i class="large material-icons">account_circle</i>
+        <br>
+        <label class="content-title">店家登入</label>
+      </div>
+      <form>
+        <div class="row">
+          <div class="input-field">
+              <input value="a001" class="validate" type="text" name="something">
+            <label class="active" for="account">帳號</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field">
+              <input value="123456" class="validate" type="password" name="something">
+            <label class="active" for="password">密碼</label>
+          </div>
+        </div>
+        <div class="row">
+          <a class="waves-effect waves-light btn btn-Login" (click)="LoginClick();">Login</a>
+        </div>
+      </form>
+
+    </form>
+  </div>
+
+
+  <div class="load valign-wrapper" *ngIf="autologin">
+    <div class="text-center">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-yellow">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-green">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <span class="white-text load-content">登入中....</span>
+    </div>
+
+  </div>
+
+  <swal #dialogError title="帳號或密碼錯誤" type="error"></swal>

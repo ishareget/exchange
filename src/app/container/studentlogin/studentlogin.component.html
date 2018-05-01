@@ -1,0 +1,30 @@
+<div class="studentlogin">
+  <app-nav></app-nav>
+  <div [@fadeInOut] class="light-white valign-wrapper">
+    <form materialize class="login-content center-align z-depth-2">
+      <div class="row">
+        <i class="large material-icons">account_circle</i>
+        <br>
+        <label class="content-title">學生登入</label>
+      </div>
+      <div class="row">
+        <div class="input-field acount">
+          <input disabled [(ngModel)]="stu_account" class="validate" type="text" name="stu_account" *ngIf="stu">
+          <input [(ngModel)]="stu_account" class="validate" type="text" name="stu_account" *ngIf="!stu">
+          <label for="stu_account">帳號</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input class="validate" type="password" name="stu_password" [(ngModel)]="stu_password">
+          <label for="stu_password">密碼</label>
+        </div>
+      </div>
+      <div class="row">
+        <a class="waves-effect waves-light btn btn-Login" (click)="LoginClick();">Login</a>
+      </div>
+
+    </form>
+  </div>
+
+  <swal #dialogError title="帳號或密碼錯誤" type="error"></swal>
